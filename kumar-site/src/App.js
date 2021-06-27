@@ -10,8 +10,13 @@ import Nav from "react-bootstrap/Nav";
 import {Button,Navbar,NavDropdown,Form,FormControl} from 'react-bootstrap';
 import { Jumbotron } from 'react-bootstrap';
 import { Card } from 'react-bootstrap';
+import productsData from './vschoolProducts';
+import Product from './Product';
+import jokesData from './jokesData';
+import todosData from './todosData';
+import TodoItem from './TodoItem';
 function App() {
-  return (
+  /* return (
     <div>
       <Card border="primary" style={{ width: '50rem' }}>
     <Card.Body>
@@ -35,7 +40,27 @@ function App() {
       
 
     </div>
-  );
+  ); 
+  const productComponents = productsData.map(item => <Product key={item.id} product ={item} />)
+  return (
+    <div>
+      {productComponents}
+    </div>
+  )
+    const jokeComponents = jokesData.map(joke=> <Joke key ={joke.id} question={joke.question}
+      punchLine = {joke.punchLine} />)
+      return (
+        <div>
+          {jokeComponents}
+        </div>
+      )*/
+      const todoItems = todosData.map(item=> <TodoItem key={item.id} item={item.text} />)
+      console.log(todoItems)
+      return (
+        <div className="todo-list">
+          {todoItems}
+        </div>
+      )
 }
 
 export default App;
